@@ -1,0 +1,139 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--u-space-half, 8px);
+  padding-left: 0;
+  z-index: 1;
+}
+
+.content-inner {
+  background-color: var(--u-color-background-container, #fefefe);
+  border-radius: 8px;
+  padding: 0 64px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--u-space-one, 16px);
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.page-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--u-space-half, 8px);
+  width: 100%;
+}
+
+.page-header-title {
+  font-family: var(--u-font-body);
+  font-size: var(--u-font-size-xx-large, 32px);
+  font-weight: var(--u-font-weight-bold, 700);
+  line-height: 1.2;
+  color: var(--u-color-base-foreground-contrast, #071c31);
+}
+
+.page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--u-space-small, 8px);
+}
+
+.page-body {
+  width: 100%;
+}
+
+/*
+  MOBILE SPACING SYSTEM
+  =====================
+
+  The mobile layout uses fixed headers (status bar + top nav) that remain visible
+  while content scrolls beneath them. To ensure content is never hidden:
+
+  1. .main-content has top padding equal to total header height
+  2. .content-inner provides consistent 16px horizontal padding for all pages
+  3. All pages should wrap content in .content-inner to inherit this padding
+
+  CSS Variables (available on mobile):
+  - --mobile-header-total-height: 162px (status bar + top nav)
+  - --mobile-bottom-nav-height: 88px (floating bottom tab bar)
+  - --mobile-page-horizontal-padding: 16px (consistent left/right spacing)
+
+  When creating new pages:
+  ✓ Wrap content in <div className="content-inner">
+  ✓ Don't add additional top padding (already handled)
+  ✓ Use existing spacing tokens from uniform-styles
+  ✗ Don't hardcode pixel values for header heights
+*/
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  /* Hide scrollbar on mobile while keeping scroll functionality */
+  body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .App {
+    max-width: 100% !important;
+  }
+
+  .main-content {
+    /* Account for fixed header */
+    padding-bottom: calc(var(--mobile-bottom-nav-height, 88px) + env(safe-area-inset-bottom, 0px)) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+
+  .content-inner {
+    /* Horizontal padding only */
+    padding: 0 var(--mobile-page-horizontal-padding, 16px) !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    gap: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hide page title on mobile since it's shown in the top nav */
+  .page-header {
+    display: none !important;
+  }
+
+  .page-header-title {
+    display: none !important;
+  }
+
+  .page-body {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
