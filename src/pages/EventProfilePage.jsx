@@ -53,9 +53,7 @@ const EventProfilePage = () => {
 
           .event-profile__header {
             position: relative;
-            background-image:
-              linear-gradient(to bottom, transparent, var(--u-color-background-container, #fefefe) 70%),
-              linear-gradient(115deg, ${event.awayTeam.color} 50%, ${event.homeTeam.color} 50%);
+            background: var(--u-color-background-container, #fefefe);
             padding-top: 48px;
             padding-bottom: 40px;
           }
@@ -382,9 +380,7 @@ const EventProfilePage = () => {
             .event-profile__header {
               padding-top: 76px;
               padding-bottom: 0;
-              background-image:
-                linear-gradient(to bottom, transparent, var(--u-color-background-container, #fefefe) 65%),
-                linear-gradient(115deg, ${event.awayTeam.color} 50%, ${event.homeTeam.color} 50%);
+              background: var(--u-color-background-container, #fefefe);
             }
 
             /* Mobile with video player (past and live events) - show scores */

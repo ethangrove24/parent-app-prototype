@@ -56,7 +56,7 @@ const HighlightCard = ({ highlight, onClick }) => {
           .highlight-card__thumbnail {
             width: 100%;
             height: 146px;
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            background: var(--u-color-background-container, #fefefe);
             border-radius: 4px;
             position: relative;
             overflow: hidden;

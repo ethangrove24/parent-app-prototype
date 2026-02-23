@@ -61,7 +61,7 @@ const LivestreamCard = ({ event, onClick }) => {
             position: relative;
             width: 100%;
             aspect-ratio: 325 / 182;
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: var(--u-color-background-container, #fefefe);
             border-radius: 8px;
             overflow: hidden;
           }
