@@ -2,7 +2,7 @@
  * Past Game Video Assignment Script
  *
  * Assigns past-game and full-game videos to events with status: 'past'.
- * This enables the "Recent Results" cards to navigate to event profile pages
+ * This enables the "Past Games" cards to navigate to event profile pages
  * with playable video content.
  *
  * This script:

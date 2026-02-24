@@ -38,7 +38,7 @@ const HomePage = () => {
   const livestreamEvents = Object.values(getLivestreams()).map(enrichLivestreamForDisplay)
   const highlights = Object.values(getHighlights()).map(enrichHighlightForDisplay)
   const events = getEventsByStatus('upcoming').map(enrichEventForDisplay)
-  const recentResults = getEventsByStatus('past').map(enrichEventForDisplay)
+  const pastGames = getEventsByStatus('past').map(enrichEventForDisplay)
   const athletes = Object.values(getAthletes())
 
   return (
@@ -117,8 +117,8 @@ const HomePage = () => {
             display: none;
           }
 
-          /* Recent Results Section */
-          .recent-results-carousel {
+          /* Past Games Section */
+          .past-games-carousel {
             display: flex;
             gap: 16px;
             overflow-x: auto;
@@ -128,11 +128,11 @@ const HomePage = () => {
             -ms-overflow-style: none;
           }
 
-          .recent-results-carousel::-webkit-scrollbar {
+          .past-games-carousel::-webkit-scrollbar {
             display: none;
           }
 
-          .recent-results-carousel .event-card {
+          .past-games-carousel .event-card {
             width: 90%;
             flex-shrink: 0;
           }
@@ -386,7 +386,7 @@ const HomePage = () => {
 
             .hero-carousel,
             .highlights-carousel,
-            .recent-results-carousel {
+            .past-games-carousel {
               margin-left: -16px;
               margin-right: -16px;
               padding-left: 16px;
@@ -410,10 +410,10 @@ const HomePage = () => {
               </div>
             </section>
 
-            {/* Highlights Made For You */}
+            {/* Recent Highlights */}
             <section>
               <div className="section-header">
-                <h2 className="section-title">Highlights Made For You</h2>
+                <h2 className="section-title">Recent Highlights</h2>
                 <button className="section-link">See All</button>
               </div>
               <div className="highlights-carousel">
@@ -423,14 +423,14 @@ const HomePage = () => {
               </div>
             </section>
 
-            {/* Recent Results */}
+            {/* Past Games */}
             <section>
               <div className="section-header">
-                <h2 className="section-title">Recent Results</h2>
+                <h2 className="section-title">Past Games</h2>
                 <button className="section-link">See All</button>
               </div>
-              <div className="recent-results-carousel">
-                {recentResults.map((event) => (
+              <div className="past-games-carousel">
+                {pastGames.map((event) => (
                   <EventCard key={event.id} event={event} variant="bordered" />
                 ))}
               </div>
