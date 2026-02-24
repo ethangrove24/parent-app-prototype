@@ -15,6 +15,7 @@ import {
   enrichHighlightForDisplay,
   enrichEventForDisplay
 } from '../config/data/dataConfig'
+import ChevronIcon from '../assets/ui-icons/UI Navigation Forward.svg'
 
 // Note: Using pink placeholder for missing icons per icon usage rules
 const UpArrowIcon = () => (
@@ -139,38 +140,41 @@ const HomePage = () => {
           /* Athletes Section */
           .athletes-list {
             display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            overflow-y: hidden;
-            padding-bottom: 0px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-          }
-
-          .athletes-list::-webkit-scrollbar {
-            display: none;
+            flex-direction: column;
+            gap: 8px;
           }
 
           .athlete-item {
-            flex-shrink: 0;
             display: flex;
-            flex-direction: column;
-            gap: 4px;
             align-items: center;
+            gap: 8px;
+            padding: 12px 4px 24px;
+            border-bottom: 1px dashed var(--u-color-line-subtle, #c4c6c8);
           }
 
+          .athlete-item:last-child {
+            border-bottom: none;
+          }
+
+          .athlete-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+          }
 
           .athlete-name {
             font-family: var(--u-font-body);
-            font-weight: var(--u-font-weight-default, 400);
-            font-size: 14px;
-            line-height: 1.4;
-            color: var(--u-color-base-foreground, #36485c);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            max-width: 64px;
-            text-align: center;
+            font-weight: var(--u-font-weight-bold, 700);
+            font-size: 16px;
+            color: var(--u-color-base-foreground-contrast, #071c31);
+            margin: 0;
+          }
+
+          .athlete-chevron {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
           }
 
           /* Event Card Styles */
@@ -439,10 +443,18 @@ const HomePage = () => {
                 <button className="section-link">See All</button>
               </div>
               <div className="athletes-list">
-                {athletes.map((athlete) => (
-                  <div key={athlete.id} className="athlete-item">
-                    <Avatar variant="user" size="large" src={athlete.avatar} initials={athlete.initials} />
-                    <div className="athlete-name">{athlete.firstName}</div>
+                {athletes.map((athlete, index) => (
+                  <div key={athlete.id} className={`athlete-item ${index === athletes.length - 1 ? 'athlete-item--last' : ''}`}>
+                    <Avatar
+                      variant="user"
+                      size="small"
+                      src={athlete.avatar}
+                      initials={athlete.initials}
+                    />
+                    <div className="athlete-info">
+                      <p className="athlete-name">{athlete.firstName} {athlete.lastName}</p>
+                    </div>
+                    <img src={ChevronIcon} alt="" className="athlete-chevron" />
                   </div>
                 ))}
               </div>
