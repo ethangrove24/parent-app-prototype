@@ -7,6 +7,7 @@ export const teams = {
     shortName: 'Lincoln North Star',
     initials: 'LNS',
     avatar: '/content/images/team-1-avatar.png',
+    organizationId: 'org-lnhs', // Link to organization
     sport: {
       name: 'Girls Varsity Basketball',
       type: 'Basketball',
@@ -20,8 +21,62 @@ export const teams = {
     },
     location: 'Lincoln, NE',
     record: '12 - 3',
+
+    // Roster (following AthleteDetails.cs pattern for relationships)
     athletes: ['athlete-1', 'athlete-2'],
-    schedule: ['event-r1', 'event-r2', 'event-live-2']
+
+    // Coaching staff
+    coaches: [
+      {
+        id: 'coach-1',
+        firstName: 'Maria',
+        lastName: 'Rodriguez',
+        role: 'Head Coach',
+        initials: 'MR',
+        avatar: null,
+        yearsWithTeam: 5
+      },
+      {
+        id: 'coach-2',
+        firstName: 'Tom',
+        lastName: 'Stevens',
+        role: 'Assistant Coach',
+        initials: 'TS',
+        avatar: null,
+        yearsWithTeam: 3
+      }
+    ],
+
+    // Schedule/Events
+    schedule: ['event-r1', 'event-r2', 'event-live-2'],
+
+    // Season Stats (similar to Metrics in AthleteDetails.cs)
+    seasonStats: {
+      wins: 12,
+      losses: 3,
+      winPercentage: 0.800,
+      pointsPerGame: 68.5,
+      pointsAllowedPerGame: 58.2,
+      streak: 'W3',
+      conferenceRecord: '8 - 1',
+      homeRecord: '7 - 1',
+      awayRecord: '5 - 2'
+    },
+
+    // Achievements (like Achievements in AthleteDetails.cs)
+    achievements: [
+      'District Champions 2024',
+      'Conference Runner-up 2023',
+      'State Tournament 2023'
+    ],
+
+    // Season info
+    season: {
+      year: 2025,
+      startDate: '2024-11-15',
+      endDate: '2025-03-10',
+      status: 'in_progress'
+    }
   },
   'team-2': {
     id: 'team-2',
@@ -29,6 +84,7 @@ export const teams = {
     shortName: 'Wayne',
     initials: 'WH',
     avatar: '/content/images/team-2-avatar.png',
+    organizationId: 'org-whs',
     sport: {
       name: 'Boys Varsity Soccer',
       type: 'Soccer',
@@ -42,8 +98,47 @@ export const teams = {
     },
     location: 'Wayne, NE',
     record: '8 - 5',
+
     athletes: ['athlete-3'],
-    schedule: ['event-1', 'event-2', 'event-3']
+
+    coaches: [
+      {
+        id: 'coach-3',
+        firstName: 'David',
+        lastName: 'Thompson',
+        role: 'Head Coach',
+        initials: 'DT',
+        avatar: null,
+        yearsWithTeam: 7
+      }
+    ],
+
+    schedule: ['event-1', 'event-2', 'event-3'],
+
+    seasonStats: {
+      wins: 8,
+      losses: 5,
+      winPercentage: 0.615,
+      goalsFor: 32,
+      goalsAgainst: 21,
+      shutouts: 4,
+      streak: 'L1',
+      conferenceRecord: '5 - 3',
+      homeRecord: '5 - 2',
+      awayRecord: '3 - 3'
+    },
+
+    achievements: [
+      'Conference Champions 2024',
+      'District Finalist 2023'
+    ],
+
+    season: {
+      year: 2025,
+      startDate: '2024-08-20',
+      endDate: '2024-11-05',
+      status: 'in_progress'
+    }
   },
   'team-3': {
     id: 'team-3',
@@ -51,6 +146,7 @@ export const teams = {
     shortName: 'Lincoln North Star',
     initials: 'LNS',
     avatar: '/content/images/team-1-avatar.png', // Same as team-1
+    organizationId: 'org-lnhs',
     sport: {
       name: 'Womens Varsity Soccer',
       type: 'Soccer',
@@ -64,8 +160,48 @@ export const teams = {
     },
     location: 'Lincoln, NE',
     record: '10 - 2',
+
     athletes: ['athlete-1'],
-    schedule: ['event-live-1']
+
+    coaches: [
+      {
+        id: 'coach-4',
+        firstName: 'Jennifer',
+        lastName: 'Martinez',
+        role: 'Head Coach',
+        initials: 'JM',
+        avatar: null,
+        yearsWithTeam: 4
+      }
+    ],
+
+    schedule: ['event-live-1'],
+
+    seasonStats: {
+      wins: 10,
+      losses: 2,
+      winPercentage: 0.833,
+      goalsFor: 45,
+      goalsAgainst: 15,
+      shutouts: 7,
+      streak: 'W5',
+      conferenceRecord: '6 - 1',
+      homeRecord: '6 - 0',
+      awayRecord: '4 - 2'
+    },
+
+    achievements: [
+      'Conference Champions 2024',
+      'State Tournament Semifinalist 2023',
+      'Undefeated Home Record 2024'
+    ],
+
+    season: {
+      year: 2025,
+      startDate: '2024-08-20',
+      endDate: '2024-11-05',
+      status: 'in_progress'
+    }
   },
   // Opponent teams
   'team-cv': {

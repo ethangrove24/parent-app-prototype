@@ -3,6 +3,7 @@
 
 import { parent, athletes } from './users'
 import { teams } from './teams'
+import { organizations } from './organizations'
 import { events } from './events'
 import { highlights } from './highlights'
 import { livestreams } from './livestreams'
@@ -11,6 +12,7 @@ export default {
   parent,
   athletes,
   teams,
+  organizations,
   events,
   highlights,
   livestreams

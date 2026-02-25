@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Avatar from '../components/common/Avatar'
 import Button from '../components/common/Button'
 import VideoPlayer from '../components/video/VideoPlayer'
@@ -19,9 +19,15 @@ const TriangleIndicator = () => (
 
 const EventProfilePage = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
 
   // Get event data from config by ID
   const eventData = getEventWithTeamDetails(id) || getEventWithTeamDetails('event-profile-3')
+
+  // Handler for athlete click
+  const handleAthleteClick = (athleteId) => {
+    navigate(`/athlete/${athleteId}`)
+  }
 
   // Get sport icon for avatars
   const sportIcon = getSportIcon(eventData.sport)
@@ -303,10 +309,23 @@ const EventProfilePage = () => {
             gap: 8px;
             padding: 12px 4px 24px;
             border-bottom: 1px dashed var(--u-color-line-subtle, #c4c6c8);
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border-radius: 4px;
+            margin: 0 -4px;
           }
 
           .event-profile__list-item--last {
             border-bottom: none;
+          }
+
+          .event-profile__list-item:hover {
+            background-color: var(--u-color-base-background-subtle, #f5f5f5);
+          }
+
+          .event-profile__list-item:focus-visible {
+            outline: 2px solid var(--u-color-emphasis-foreground-active, #0066cc);
+            outline-offset: 2px;
           }
 
           .event-profile__list-info {
@@ -754,7 +773,19 @@ const EventProfilePage = () => {
             <div className="event-profile__list">
               {/* Featured Athletes */}
               {event.featuredAthletes && event.featuredAthletes.map((athlete) => (
-                <div key={athlete.id} className="event-profile__list-item">
+                <div
+                  key={athlete.id}
+                  className="event-profile__list-item"
+                  onClick={() => handleAthleteClick(athlete.id)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleAthleteClick(athlete.id)
+                    }
+                  }}
+                >
                   <Avatar
                     variant="user"
                     size="small"

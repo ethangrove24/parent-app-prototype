@@ -58,12 +58,18 @@ const Navigation = () => {
       return 'Event Details'
     } else if (location.pathname.startsWith('/highlight/')) {
       return 'Highlight'
+    } else if (location.pathname.startsWith('/athlete/')) {
+      return 'Athlete Profile'
+    } else if (location.pathname.startsWith('/team/')) {
+      return 'Team Profile'
+    } else if (location.pathname.startsWith('/org/')) {
+      return 'Organization'
     }
     return 'Back'
   }
 
   // Check if we should hide the secondary nav title on mobile
-  const shouldHideSecondaryNavTitle = location.pathname.startsWith('/event/') || location.pathname.startsWith('/highlight/')
+  const shouldHideSecondaryNavTitle = location.pathname.startsWith('/event/') || location.pathname.startsWith('/highlight/') || location.pathname.startsWith('/athlete/')
 
   // Detect scroll for mobile shadow effect
   useEffect(() => {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useWorkspace } from '../context/WorkspaceContext'
 import VideoPlayer from '../components/video/VideoPlayer'
 import LivestreamCard from '../components/cards/LivestreamCard'
@@ -32,6 +33,7 @@ const DownArrowIcon = () => (
 
 const HomePage = () => {
   const { selectedWorkspace } = useWorkspace()
+  const navigate = useNavigate()
   const isPersonalWorkspace = selectedWorkspace.id === 'personal'
 
   // Get data from centralized config
@@ -40,6 +42,11 @@ const HomePage = () => {
   const events = getEventsByStatus('upcoming').map(enrichEventForDisplay)
   const pastGames = getEventsByStatus('past').map(enrichEventForDisplay)
   const athletes = Object.values(getAthletes())
+
+  // Handler for athlete click
+  const handleAthleteClick = (athleteId) => {
+    navigate(`/athlete/${athleteId}`)
+  }
 
   return (
     <>
@@ -150,10 +157,23 @@ const HomePage = () => {
             gap: 8px;
             padding: 12px 4px 24px;
             border-bottom: 1px dashed var(--u-color-line-subtle, #c4c6c8);
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border-radius: 4px;
+            margin: 0 -4px;
           }
 
           .athlete-item:last-child {
             border-bottom: none;
+          }
+
+          .athlete-item:hover {
+            background-color: var(--u-color-base-background-subtle, #f5f5f5);
+          }
+
+          .athlete-item:focus-visible {
+            outline: 2px solid var(--u-color-emphasis-foreground-active, #0066cc);
+            outline-offset: 2px;
           }
 
           .athlete-info {
@@ -444,7 +464,19 @@ const HomePage = () => {
               </div>
               <div className="athletes-list">
                 {athletes.map((athlete, index) => (
-                  <div key={athlete.id} className={`athlete-item ${index === athletes.length - 1 ? 'athlete-item--last' : ''}`}>
+                  <div
+                    key={athlete.id}
+                    className={`athlete-item ${index === athletes.length - 1 ? 'athlete-item--last' : ''}`}
+                    onClick={() => handleAthleteClick(athlete.id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        handleAthleteClick(athlete.id)
+                      }
+                    }}
+                  >
                     <Avatar
                       variant="user"
                       size="small"

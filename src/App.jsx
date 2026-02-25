@@ -6,6 +6,9 @@ import ScrollToTop from './components/common/ScrollToTop'
 import HomePage from './pages/HomePage'
 import EventProfilePage from './pages/EventProfilePage'
 import HighlightPlayerPage from './pages/HighlightPlayerPage'
+import AthleteProfilePage from './pages/AthleteProfilePage'
+import TeamProfilePage from './pages/TeamProfilePage'
+import OrgProfilePage from './pages/OrgProfilePage'
 import SearchPage from './pages/SearchPage'
 import FavoritesPage from './pages/FavoritesPage'
 import TicketsPage from './pages/TicketsPage'
@@ -24,6 +27,9 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/event/:id" element={<EventProfilePage />} />
               <Route path="/highlight/:id" element={<HighlightPlayerPage />} />
+              <Route path="/athlete/:id" element={<AthleteProfilePage />} />
+              <Route path="/team/:id" element={<TeamProfilePage />} />
+              <Route path="/org/:id" element={<OrgProfilePage />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/favorites" element={<FavoritesPage />} />
               <Route path="/tickets" element={<TicketsPage />} />
