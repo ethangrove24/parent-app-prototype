@@ -57,32 +57,29 @@ export const organizations = {
       conference: 'Lincoln Public Schools Athletic Conference'
     }
   },
-  'org-whs': {
-    id: 'org-whs',
-    name: 'Wayne High School',
-    shortName: 'Wayne High',
-    initials: 'WHS',
-    avatar: '/content/images/team-2-avatar.png',
-    type: 'High School',
+  'org-stcroix': {
+    id: 'org-stcroix',
+    name: 'St. Croix Soccer Club',
+    shortName: 'St. Croix SC',
+    initials: 'SCSC',
+    avatar: 'https://static.hudl.com/users/temp/8221754_378d1dfcce07443da16755ba89c7288b.png',
+    type: 'Club',
 
     location: {
-      city: 'Wayne',
-      state: 'NE',
-      address: '611 West 7th St',
-      zipCode: '68787'
+      city: 'Stillwater',
+      state: 'MN',
+      address: null,
+      zipCode: null
     },
 
     details: {
-      athleticDirector: 'Mike Johnson',
-      principal: 'Mark Lenihan',
-      established: 1891,
-      mascot: 'Blue Devils',
+      established: null,
       colors: {
-        primary: '#ff7020',
-        secondary: '#ffa500'
+        primary: '#003087',
+        secondary: '#c9a84c'
       },
-      website: 'https://www.wayneschools.org',
-      phone: '(402) 375-3150'
+      website: null,
+      phone: null
     },
 
     teams: ['team-2'],
@@ -95,15 +92,14 @@ export const organizations = {
     },
 
     social: {
-      twitter: '@WayneBlueDevils',
-      facebook: 'WayneHighSchool',
-      instagram: '@waynehigh'
+      twitter: null,
+      facebook: null,
+      instagram: null
     },
 
     metadata: {
-      enrollment: 450,
-      classification: 'Class C1',
-      conference: 'Mid State Conference'
+      classification: 'ECNL',
+      conference: 'ECNL Boys'
     }
   },
   'org-bt': {

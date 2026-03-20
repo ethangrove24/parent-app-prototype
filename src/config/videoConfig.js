@@ -43,10 +43,10 @@ try {
 const MANUAL_VIDEO_SOURCES = {
   // Keep backward compatibility with existing keys
   heroLiveFeed1: {
-    src: `${BASE_VIDEO_URL}/live-feed-1.mov`,
-    poster: `${BASE_VIDEO_URL}/live-feed-1-poster.jpg`,
-    type: 'video/quicktime',
-    label: 'Soccer Game - Lincoln vs Bellevue'
+    src: 'https://vd.hudl.com/p-highlights/Team/755106/69a5820b6025af05344f5bd5/fa29d404_720.mp4?v=3275505A5778DE08',
+    poster: '/content/images/live-feed-1-poster.jpg',
+    type: 'video/mp4',
+    label: 'St. Croix SC vs Minnesota Thunder Academy – Feb 28, 2026'
   },
   heroLiveFeed2: {
     src: `${BASE_VIDEO_URL}/live-feed-2.mov`,

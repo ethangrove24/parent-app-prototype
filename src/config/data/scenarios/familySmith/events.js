@@ -1,104 +1,209 @@
 // Family Smith - Events
 
 export const events = {
-  'event-1': {
-    id: 'event-1',
+  // Arthur Taylor – St. Croix ECNL B12 (2025–2026 Season)
+  'event-a1': {
+    id: 'event-a1',
     status: 'past',
-    date: {
-      iso: '2026-01-30',
-      weekday: 'Mon',
-      day: '30',
-      month: 'Jan',
-      year: '2026'
-    },
+    date: { iso: '2025-09-20', weekday: 'Sat', day: '20', month: 'Sep', year: '2025' },
     time: null,
-    type: 'Boys Varsity Soccer',
+    type: 'Boys Club Soccer',
     sport: 'Soccer',
-    homeTeam: {
-      teamId: 'team-2',
-      score: 0,
-      isWinner: false
-    },
-    awayTeam: {
-      teamId: 'team-cv',
-      score: 7,
-      isWinner: true
-    },
-    location: 'Wayne High School',
+    homeTeam: { teamId: 'team-2', score: 0, isWinner: false },
+    awayTeam: { teamId: 'team-chicago-inter', score: 0, isWinner: false },
+    location: 'St. Croix Academy, Stillwater, MN',
     hasTickets: false,
     athletes: ['athlete-3'],
-    recap: 'Centerville dominated the match with a strong offensive performance, securing a 7-0 victory against Wayne. The away team controlled possession and created numerous scoring opportunities throughout the game.',
-    highlights: [
-      'Centerville scored 4 goals in the first half',
-      'Wayne struggled to maintain possession',
-      'Strong defensive performance from Centerville'
-    ],
-    stats: {
-      homeTeam: {
-        shots: 8,
-        shotsOnGoal: 3,
-        possession: '35%',
-        corners: 4
-      },
-      awayTeam: {
-        shots: 18,
-        shotsOnGoal: 12,
-        possession: '65%',
-        corners: 9
-      }
-    },
-    videos: {
-      livestream: null,
-      fullGame: 'eventFullGame',
-      highlights: ['playlistHighlight1']
-    }
+    recap: 'St. Croix and Chicago Inter played to a 0-0 draw in the season opener. Both defenses were strong throughout, with neither side able to find the back of the net.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
   },
+  'event-a2': {
+    id: 'event-a2',
+    status: 'past',
+    date: { iso: '2025-09-21', weekday: 'Sun', day: '21', month: 'Sep', year: '2025' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 3, isWinner: true },
+    awayTeam: { teamId: 'team-indiana-elite', score: 0, isWinner: false },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'St. Croix dominated Indiana Elite with a convincing 3-0 shutout victory. Strong midfield play controlled the game from start to finish.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a3': {
+    id: 'event-a3',
+    status: 'past',
+    date: { iso: '2025-10-11', weekday: 'Sat', day: '11', month: 'Oct', year: '2025' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-chicago-inter', score: 2, isWinner: true },
+    awayTeam: { teamId: 'team-2', score: 0, isWinner: false },
+    location: 'Chicago, IL',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'Chicago Inter took revenge on their home turf, defeating St. Croix 2-0. St. Croix struggled to create chances away from home.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a4': {
+    id: 'event-a4',
+    status: 'past',
+    date: { iso: '2025-10-12', weekday: 'Sun', day: '12', month: 'Oct', year: '2025' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 2, isWinner: false },
+    awayTeam: { teamId: 'team-indiana-elite', score: 5, isWinner: true },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'Indiana Elite came back strong, defeating St. Croix 5-2 in a high-scoring rematch. Despite two goals from the home side, Indiana Elite\'s attack proved too much to handle.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a5': {
+    id: 'event-a5',
+    status: 'past',
+    date: { iso: '2025-11-22', weekday: 'Sat', day: '22', month: 'Nov', year: '2025' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 0, isWinner: false },
+    awayTeam: { teamId: 'team-scsc-pre', score: 2, isWinner: true },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'SCSC 2011 Pre ECNL edged St. Croix 2-0, taking advantage of two defensive lapses in a closely contested match.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a6': {
+    id: 'event-a6',
+    status: 'past',
+    date: { iso: '2025-12-07', weekday: 'Sun', day: '7', month: 'Dec', year: '2025' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 0, isWinner: false },
+    awayTeam: { teamId: 'team-mpls-united', score: 5, isWinner: true },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'Minneapolis United handed St. Croix a tough 5-0 loss, showcasing their attacking depth and clinical finishing.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a7': {
+    id: 'event-a7',
+    status: 'past',
+    date: { iso: '2025-12-07', weekday: 'Sun', day: '7', month: 'Dec', year: '2025' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 0, isWinner: false },
+    awayTeam: { teamId: 'team-tfe', score: 2, isWinner: true },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'TFE defeated St. Croix 2-0 in their second match of the day. A challenging doubleheader showed the team\'s resilience despite the result.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a8': {
+    id: 'event-a8',
+    status: 'past',
+    date: { iso: '2025-12-20', weekday: 'Sat', day: '20', month: 'Dec', year: '2025' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 4, isWinner: true },
+    awayTeam: { teamId: 'team-mpls-united', score: 2, isWinner: false },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'St. Croix bounced back in style, defeating Minneapolis United 4-2 in a rematch. The team found their attacking rhythm and controlled the second half.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a9': {
+    id: 'event-a9',
+    status: 'past',
+    date: { iso: '2026-01-24', weekday: 'Sat', day: '24', month: 'Jan', year: '2026' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 3, isWinner: true },
+    awayTeam: { teamId: 'team-sc-rl-b11', score: 0, isWinner: false },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'St. Croix shut out St. Croix ECNL RL B11 3-0 in a local rivalry match, putting together a complete team performance on both sides of the ball.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a10': {
+    id: 'event-a10',
+    status: 'past',
+    date: { iso: '2026-02-07', weekday: 'Sat', day: '7', month: 'Feb', year: '2026' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: 2, isWinner: true },
+    awayTeam: { teamId: 'team-tcsl-reps', score: 1, isWinner: false },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'A hard-fought 2-1 victory over TCSL REPS 2012 kept St. Croix\'s momentum going. The team held on in the final minutes after TCSL pulled one back late.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a11': {
+    id: 'event-a11',
+    status: 'past',
+    date: { iso: '2026-02-28', weekday: 'Sat', day: '28', month: 'Feb', year: '2026' },
+    time: null,
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-mta', score: 0, isWinner: false },
+    awayTeam: { teamId: 'team-2', score: 4, isWinner: true },
+    location: 'Minnesota',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    recap: 'St. Croix capped the first half of the season with an impressive 4-0 road win over Minnesota Thunder Academy. Arthur Taylor and teammates delivered a dominant away performance.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  // Live demo – St. Croix ECNL B12 (update teams from old WH/CV)
   'event-2': {
     id: 'event-2',
     status: 'live',
     date: {
-      iso: '2026-01-31',
-      weekday: 'Tue',
-      day: '31',
-      month: 'Jan',
+      iso: '2026-03-19',
+      weekday: 'Thu',
+      day: '19',
+      month: 'Mar',
       year: '2026'
     },
-    time: '7:00 PM',
-    type: 'Boys Varsity Soccer',
+    time: '10:00 AM',
+    type: 'Boys Club Soccer',
     sport: 'Soccer',
     homeTeam: {
       teamId: 'team-2',
-      score: 2,
+      score: 1,
       isWinner: false
     },
     awayTeam: {
-      teamId: 'team-cv',
-      score: 3,
+      teamId: 'team-chicago-inter',
+      score: 1,
       isWinner: false
     },
-    location: 'Wayne High School',
+    location: 'St. Croix Academy, Stillwater, MN',
     hasTickets: true,
     athletes: ['athlete-3'],
     quarter: '2nd Half',
-    timeRemaining: '12:34',
+    timeRemaining: '22:15',
     recentPlays: [
-      { time: '12:34', quarter: '2nd Half', description: 'CV - Goal from outside the box' },
-      { time: '18:45', quarter: '2nd Half', description: 'WH - Corner kick saved by goalkeeper' },
-      { time: '22:11', quarter: '2nd Half', description: 'WH - Goal on counter attack' }
+      { time: '22:15', quarter: '2nd Half', description: 'CI - Goal, equalizer from the right wing' },
+      { time: '35:08', quarter: '2nd Half', description: 'SC - Corner kick cleared by CI defense' },
+      { time: '41:52', quarter: '1st Half', description: 'SC - Goal, #29 finish from close range' }
     ],
     stats: {
-      homeTeam: {
-        shots: 11,
-        shotsOnGoal: 6,
-        possession: '48%',
-        corners: 5
-      },
-      awayTeam: {
-        shots: 14,
-        shotsOnGoal: 9,
-        possession: '52%',
-        corners: 7
-      }
+      homeTeam: { shots: 9, shotsOnGoal: 4, possession: '52%', corners: 6 },
+      awayTeam: { shots: 11, shotsOnGoal: 5, possession: '48%', corners: 3 }
     },
     videos: {
       livestream: 'heroLiveFeed1',
@@ -106,55 +211,36 @@ export const events = {
       highlights: []
     }
   },
-  'event-3': {
-    id: 'event-3',
+  // Upcoming games
+  'event-a-up1': {
+    id: 'event-a-up1',
     status: 'upcoming',
-    date: {
-      iso: '2026-02-01',
-      weekday: 'Wed',
-      day: '1',
-      month: 'Feb',
-      year: '2026'
-    },
-    time: '12:59PM',
-    type: 'Boys Varsity Soccer',
+    date: { iso: '2026-04-18', weekday: 'Sat', day: '18', month: 'Apr', year: '2026' },
+    time: '11:30 AM',
+    type: 'Boys Club Soccer',
     sport: 'Soccer',
-    homeTeam: {
-      teamId: 'team-2',
-      score: null,
-      isWinner: false
-    },
-    awayTeam: {
-      teamId: 'team-cv',
-      score: null,
-      isWinner: false
-    },
-    location: 'Wayne High School',
+    homeTeam: { teamId: 'team-2', score: null, isWinner: false },
+    awayTeam: { teamId: 'team-fc-wi', score: null, isWinner: false },
+    location: 'St. Croix Academy, Stillwater, MN',
     hasTickets: false,
     athletes: ['athlete-3'],
-    preview: 'Wayne looks to bounce back after recent losses against Centerville. This matchup will be crucial for Wayne\'s playoff positioning. Both teams feature strong attacking players and this should be an exciting game.',
-    keyMatchups: [
-      'Wayne midfield vs Centerville defense',
-      'Battle for possession in the center',
-      'Set piece opportunities'
-    ],
-    seasonStats: {
-      homeTeam: {
-        avgGoalsScored: 2.1,
-        avgGoalsAllowed: 2.8,
-        possession: '47%'
-      },
-      awayTeam: {
-        avgGoalsScored: 3.2,
-        avgGoalsAllowed: 1.5,
-        possession: '58%'
-      }
-    },
-    videos: {
-      livestream: null,
-      fullGame: null,
-      highlights: []
-    }
+    preview: 'St. Croix hosts FC Wisconsin ECNL B12 in the first of back-to-back home matches. Roster data for FC Wisconsin is not yet available on Hudl.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
+  },
+  'event-a-up2': {
+    id: 'event-a-up2',
+    status: 'upcoming',
+    date: { iso: '2026-04-19', weekday: 'Sun', day: '19', month: 'Apr', year: '2026' },
+    time: '11:00 AM',
+    type: 'Boys Club Soccer',
+    sport: 'Soccer',
+    homeTeam: { teamId: 'team-2', score: null, isWinner: false },
+    awayTeam: { teamId: 'team-chicago-magic', score: null, isWinner: false },
+    location: 'St. Croix Academy, Stillwater, MN',
+    hasTickets: false,
+    athletes: ['athlete-3'],
+    preview: 'St. Croix rounds out the weekend against Chicago Magic ECNL B12 in their second consecutive home match. Chicago Magic roster data is not yet available on Hudl.',
+    videos: { livestream: null, fullGame: null, highlights: [] }
   },
   'event-r1': {
     id: 'event-r1',
@@ -286,7 +372,7 @@ export const events = {
     },
     location: 'Lincoln Stadium',
     hasTickets: false,
-    athletes: ['athlete-1', 'athlete-2', 'athlete-3'],
+    athletes: ['athlete-1', 'athlete-2'],
     quarter: 'Q3',
     timeRemaining: '8:45',
     recentPlays: [
@@ -339,7 +425,7 @@ export const events = {
     },
     location: 'Millard North Stadium',
     hasTickets: false,
-    athletes: ['athlete-2', 'athlete-3'],
+    athletes: ['athlete-2'],
     preview: 'Top-ranked Millard North faces their toughest test yet against Elkhorn South in what promises to be a defensive battle. Both teams feature strong defensive lines and this matchup will likely come down to turnovers and special teams play.',
     keyMatchups: [
       'Millard North QB vs Elkhorn South Secondary',
@@ -490,7 +576,7 @@ export const events = {
       }
     },
     videos: {
-      livestream: 'heroLiveFeed1',
+      livestream: null,
       fullGame: null,
       highlights: []
     }

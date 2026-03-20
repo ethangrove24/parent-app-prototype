@@ -2,11 +2,11 @@
 
 export const parent = {
   id: 'parent-1',
-  firstName: 'Parent',
-  lastName: 'Smith',
-  initials: 'PS',
-  avatar: '/content/images/parent-avatar.png',
-  athletes: ['athlete-1', 'athlete-2', 'athlete-3']
+  firstName: 'Kelly',
+  lastName: 'Taylor',
+  initials: 'KT',
+  avatar: null,
+  athletes: ['athlete-3']
 }
 
 export const athletes = {
@@ -32,12 +32,14 @@ export const athletes = {
   },
   'athlete-3': {
     id: 'athlete-3',
-    firstName: 'Tommy',
-    lastName: 'Smith',
-    initials: 'TJ',
-    avatar: '/content/images/athlete3-avatar.png',
+    firstName: 'Arthur',
+    lastName: 'Taylor',
+    initials: 'AT',
+    avatar: null,
     parentId: 'parent-1',
     teams: ['team-2'],
-    graduationYear: 2028
+    graduationYear: 2031,
+    jerseyNumber: '29',
+    position: 'Midfielder'
   }
 }

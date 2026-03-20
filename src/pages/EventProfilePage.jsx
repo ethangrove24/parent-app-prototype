@@ -7,6 +7,7 @@ import { getEventWithTeamDetails } from '../config/data/dataConfig'
 import { getVideoSource } from '../config/videoConfig'
 import { getSportIcon } from '../config/helpers/sportIcons'
 import RecordIcon from '../assets/ui-icons/Record.svg'
+import RecordOffIcon from '../assets/ui-icons/Record Off.svg'
 import TicketIcon from '../assets/ui-icons/Ticket.svg'
 import ChevronIcon from '../assets/ui-icons/UI Navigation Forward.svg'
 
@@ -699,7 +700,7 @@ const EventProfilePage = () => {
                 </p>
                 {event.time && (
                   <div className="event-profile__time-badge">
-                    <img src={RecordIcon} alt="" className="event-profile__time-icon" />
+                    <img src={RecordOffIcon} alt="" className="event-profile__time-icon" />
                     <p className="event-profile__status-text">{event.time}</p>
                   </div>
                 )}

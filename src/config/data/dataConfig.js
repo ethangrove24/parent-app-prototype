@@ -32,7 +32,12 @@ export const getParent = () => {
 }
 
 export const getAthletes = () => {
-  return getActiveScenario().athletes
+  const scenario = getActiveScenario()
+  const parentAthleteIds = scenario.parent.athletes
+  const allAthletes = scenario.athletes
+  return Object.fromEntries(
+    Object.entries(allAthletes).filter(([id]) => parentAthleteIds.includes(id))
+  )
 }
 
 export const getTeams = () => {
@@ -48,7 +53,14 @@ export const getEvents = () => {
 }
 
 export const getHighlights = () => {
-  return getActiveScenario().highlights
+  const scenario = getActiveScenario()
+  const parentAthleteIds = scenario.parent.athletes
+  const allHighlights = scenario.highlights
+  return Object.fromEntries(
+    Object.entries(allHighlights).filter(([, h]) =>
+      h.athleteIds && h.athleteIds.some(id => parentAthleteIds.includes(id))
+    )
+  )
 }
 
 export const getLivestreams = () => {
@@ -66,8 +78,13 @@ export const getLivestreams = () => {
  */
 export const getEventsByStatus = (status) => {
   const events = getEvents()
+  const parentAthleteIds = getActiveScenario().parent.athletes
   return Object.values(events)
-    .filter(event => event.status === status)
+    .filter(event =>
+      event.status === status &&
+      event.athletes &&
+      event.athletes.some(id => parentAthleteIds.includes(id))
+    )
     .sort((a, b) => {
       const dateA = new Date(a.date.iso)
       const dateB = new Date(b.date.iso)

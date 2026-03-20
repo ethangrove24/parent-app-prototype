@@ -1,18 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useWorkspace } from '../context/WorkspaceContext'
-import VideoPlayer from '../components/video/VideoPlayer'
-import LivestreamCard from '../components/cards/LivestreamCard'
+import LiveEventCard from '../components/cards/LiveEventCard'
 import HighlightCard from '../components/cards/HighlightCard'
 import EventCard from '../components/cards/EventCard'
 import Avatar from '../components/common/Avatar'
-import { getVideoSource } from '../config/videoConfig'
 import {
-  getLivestreams,
   getHighlights,
   getEventsByStatus,
   getAthletes,
-  enrichLivestreamForDisplay,
   enrichHighlightForDisplay,
   enrichEventForDisplay
 } from '../config/data/dataConfig'
@@ -37,7 +33,7 @@ const HomePage = () => {
   const isPersonalWorkspace = selectedWorkspace.id === 'personal'
 
   // Get data from centralized config
-  const livestreamEvents = Object.values(getLivestreams()).map(enrichLivestreamForDisplay)
+  const liveEvents = getEventsByStatus('live')
   const highlights = Object.values(getHighlights()).map(enrichHighlightForDisplay)
   const events = getEventsByStatus('upcoming').map(enrichEventForDisplay)
   const pastGames = getEventsByStatus('past').map(enrichEventForDisplay)
@@ -55,7 +51,7 @@ const HomePage = () => {
           .home-page {
             display: flex;
             flex-direction: column;
-            gap: 48px;
+            gap: 64px;
             width: 100%;
           }
 
@@ -140,7 +136,7 @@ const HomePage = () => {
           }
 
           .past-games-carousel .event-card {
-            width: 90%;
+            width: 80%;
             flex-shrink: 0;
           }
 
@@ -202,7 +198,6 @@ const HomePage = () => {
             display: flex;
             gap: 24px;
             padding: 12px;
-            border-bottom: 1px solid var(--u-color-line-subtle, #c4c6c8);
           }
 
           .event-date {
@@ -396,7 +391,7 @@ const HomePage = () => {
           /* Mobile Styles */
           @media (max-width: 767px) {
             .home-page {
-              gap: 48px;
+              gap: 64px;
               padding-top: 136px;
             }
 
@@ -424,8 +419,8 @@ const HomePage = () => {
             {/* Hero Carousel Section */}
             <section>
               <div className="hero-carousel">
-                {livestreamEvents.map((event, index) => (
-                  <LivestreamCard key={index} event={event} />
+                {liveEvents.map((event) => (
+                  <LiveEventCard key={event.id} event={event} fullWidth={liveEvents.length === 1} />
                 ))}
               </div>
             </section>
@@ -446,7 +441,7 @@ const HomePage = () => {
             {/* Past Games */}
             <section>
               <div className="section-header">
-                <h2 className="section-title">Past Games</h2>
+                <h2 className="section-title">Recent Games</h2>
                 <button className="section-link">See All</button>
               </div>
               <div className="past-games-carousel">

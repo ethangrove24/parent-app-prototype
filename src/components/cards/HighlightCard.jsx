@@ -113,13 +113,22 @@ const HighlightCard = ({ highlight, onClick }) => {
         aria-label={`View ${highlight.title}`}
       >
         <div className="highlight-card__thumbnail">
-          <VideoPlayer
-            {...getVideoSource(highlight.videoKey)}
-            autoplay={false}
-            muted={true}
-            loop={false}
-            preload="metadata"
-          />
+          {highlight.poster && !highlight.videoKey ? (
+            <img
+              src={highlight.poster}
+              alt=""
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+          ) : (
+            <VideoPlayer
+              {...getVideoSource(highlight.videoKey)}
+              poster={highlight.poster}
+              autoplay={false}
+              muted={true}
+              loop={false}
+              preload="metadata"
+            />
+          )}
 
           {/* Date Badge */}
           {highlight.date && (

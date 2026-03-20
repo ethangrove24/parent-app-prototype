@@ -80,63 +80,60 @@ export const teams = {
   },
   'team-2': {
     id: 'team-2',
-    name: 'Wayne High School',
-    shortName: 'Wayne',
-    initials: 'WH',
-    avatar: '/content/images/team-2-avatar.png',
-    organizationId: 'org-whs',
+    name: 'St. Croix ECNL B12',
+    shortName: 'St. Croix',
+    initials: 'SC',
+    avatar: 'https://static.hudl.com/users/temp/8221754_378d1dfcce07443da16755ba89c7288b.png',
+    organizationId: 'org-stcroix',
     sport: {
-      name: 'Boys Varsity Soccer',
+      name: 'Boys Club Soccer',
       type: 'Soccer',
-      level: 'Varsity',
+      level: 'ECNL',
       gender: 'Boys',
       icon: 'Soccer'
     },
     colors: {
-      primary: '#ff7020', // Orange
-      secondary: '#ffa500' // Gold
+      primary: '#003087', // Navy Blue
+      secondary: '#c9a84c' // Gold
     },
-    location: 'Wayne, NE',
-    record: '8 - 5',
+    location: 'Stillwater, MN',
+    record: '5 - 5 - 1',
 
     athletes: ['athlete-3'],
 
     coaches: [
       {
         id: 'coach-3',
-        firstName: 'David',
-        lastName: 'Thompson',
+        firstName: 'Coach',
+        lastName: 'TBD',
         role: 'Head Coach',
-        initials: 'DT',
+        initials: 'CT',
         avatar: null,
-        yearsWithTeam: 7
+        yearsWithTeam: null
       }
     ],
 
-    schedule: ['event-1', 'event-2', 'event-3'],
+    schedule: ['event-a1', 'event-a2', 'event-a3', 'event-a4', 'event-a5', 'event-a6', 'event-a7', 'event-a8', 'event-a9', 'event-a10', 'event-a11', 'event-2', 'event-a-up1', 'event-a-up2'],
 
     seasonStats: {
-      wins: 8,
+      wins: 5,
       losses: 5,
-      winPercentage: 0.615,
-      goalsFor: 32,
-      goalsAgainst: 21,
-      shutouts: 4,
-      streak: 'L1',
-      conferenceRecord: '5 - 3',
-      homeRecord: '5 - 2',
-      awayRecord: '3 - 3'
+      draws: 1,
+      winPercentage: 0.455,
+      goalsFor: 18,
+      goalsAgainst: 19,
+      shutouts: 3,
+      streak: 'W1',
+      homeRecord: '4 - 4 - 1',
+      awayRecord: '1 - 1'
     },
 
-    achievements: [
-      'Conference Champions 2024',
-      'District Finalist 2023'
-    ],
+    achievements: [],
 
     season: {
       year: 2025,
-      startDate: '2024-08-20',
-      endDate: '2024-11-05',
+      startDate: '2025-09-20',
+      endDate: '2026-04-19',
       status: 'in_progress'
     }
   },
@@ -460,6 +457,133 @@ export const teams = {
     },
     location: 'Lincoln, NE',
     record: '1 - 1',
+    athletes: [],
+    schedule: []
+  },
+  // St. Croix ECNL B12 opponent teams
+  'team-chicago-inter': {
+    id: 'team-chicago-inter',
+    name: 'Chicago Inter',
+    shortName: 'Chicago Inter',
+    initials: 'CI',
+    avatar: '/content/images/Opponent-1-avatar.png',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#003087', secondary: '#c8102e' },
+    location: 'Chicago, IL',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-indiana-elite': {
+    id: 'team-indiana-elite',
+    name: 'Indiana Elite',
+    shortName: 'Indiana Elite',
+    initials: 'IE',
+    avatar: '/content/images/Opponent-2-avatar.png',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#002d62', secondary: '#c8102e' },
+    location: 'Indiana',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-scsc-pre': {
+    id: 'team-scsc-pre',
+    name: 'SCSC 2011 Pre ECNL',
+    shortName: 'SCSC Pre',
+    initials: 'SCSC',
+    avatar: '/content/images/Opponent-3-avatar.png',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'Pre-ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#003087', secondary: '#c9a84c' },
+    location: 'Stillwater, MN',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-mpls-united': {
+    id: 'team-mpls-united',
+    name: 'Minneapolis United',
+    shortName: 'Mpls United',
+    initials: 'MU',
+    avatar: '/content/images/Opponent-4-avatar.png',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#231f20', secondary: '#c8102e' },
+    location: 'Minneapolis, MN',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-tfe': {
+    id: 'team-tfe',
+    name: 'TFE',
+    shortName: 'TFE',
+    initials: 'TFE',
+    avatar: '/content/images/Opponent-5-avatar.png',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#5a189a', secondary: '#ff006e' },
+    location: 'Minnesota',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-sc-rl-b11': {
+    id: 'team-sc-rl-b11',
+    name: 'St. Croix ECNL RL B11',
+    shortName: 'SC RL B11',
+    initials: 'SCRL',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL RL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#003087', secondary: '#c9a84c' },
+    location: 'Stillwater, MN',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-tcsl-reps': {
+    id: 'team-tcsl-reps',
+    name: 'TCSL REPS 2012',
+    shortName: 'TCSL REPS',
+    initials: 'REPS',
+    avatar: '/content/images/Opponent-6-avatar.png',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#dc0000', secondary: '#ffffff' },
+    location: 'Twin Cities, MN',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-mta': {
+    id: 'team-mta',
+    name: 'Minnesota Thunder Academy',
+    shortName: 'MN Thunder',
+    initials: 'MTA',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#1a1a2e', secondary: '#e94560' },
+    location: 'Minnesota',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-fc-wi': {
+    id: 'team-fc-wi',
+    name: 'FC Wisconsin ECNL B12',
+    shortName: 'FC Wisconsin',
+    initials: 'FCW',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#c5a028', secondary: '#003087' },
+    location: 'Wisconsin',
+    record: null,
+    athletes: [],
+    schedule: []
+  },
+  'team-chicago-magic': {
+    id: 'team-chicago-magic',
+    name: 'Chicago Magic ECNL B12',
+    shortName: 'Chicago Magic',
+    initials: 'CM',
+    sport: { name: 'Boys Club Soccer', type: 'Soccer', level: 'ECNL', gender: 'Boys', icon: 'Soccer' },
+    colors: { primary: '#6a0dad', secondary: '#ffd700' },
+    location: 'Chicago, IL',
+    record: null,
     athletes: [],
     schedule: []
   }

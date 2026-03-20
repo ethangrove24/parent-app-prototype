@@ -12,6 +12,10 @@ const HighlightPlayerPage = () => {
   // Get highlight data from config by ID
   const highlight = getHighlightById(id) || getHighlightById('highlight-1')
 
+  const embedUrl = highlight.hudlUrl
+    ? highlight.hudlUrl.replace('hudl.com/video/', 'hudl.com/embed/video/')
+    : null
+
   return (
     <>
       <style>
@@ -110,12 +114,23 @@ const HighlightPlayerPage = () => {
       </style>
       <div className="highlight-player">
         <div className="highlight-player__video">
-          <VideoPlayer
-            {...getVideoSource(highlight.videoKey)}
-            autoplay={false}
-            controls={true}
-            preload="auto"
-          />
+          {embedUrl ? (
+            <iframe
+              src={embedUrl}
+              width="100%"
+              style={{ aspectRatio: '16/9', border: 'none', display: 'block' }}
+              allowFullScreen
+              allow="autoplay; fullscreen"
+              title={highlight.title}
+            />
+          ) : (
+            <VideoPlayer
+              {...getVideoSource(highlight.videoKey)}
+              autoplay={false}
+              controls={true}
+              preload="auto"
+            />
+          )}
         </div>
 
         <div className="highlight-player__info">
